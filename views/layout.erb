@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="initial-scale=1">
+  <title><%= "#{SITE_TITLE}" %></title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <hgroup>
+        <h1><a href="/"><%= SITE_TITLE %></a> <small><%= SITE_DESCRIPTION %> <i class="fa fa-user-secret"></i></small></h1>
+      </hgroup>
+    </header>
+
+    <div id="main">
+
+      <%= yield %>
+
+      <% if flash[:success] %>
+        <h3>Your message is:</h3>
+        <div class = "alert alert-success"><%= flash[:success] %></div>
+      <% end %>
+
+      <% if flash[:danger] %>
+        <div class = "alert alert-danger"><%= flash[:danger] %></div>
+      <% end %>
+
+    </div>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
