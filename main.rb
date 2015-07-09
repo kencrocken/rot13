@@ -10,7 +10,7 @@ SITE_DESCRIPTION = "Encode/Decode your messages"
 
 
 def rot13(message)
-  @message = message.tr!("A-Za-z","N-ZA-Mn-za-m")
+  @message = message.tr("A-Za-z","N-ZA-Mn-za-m")
   if @message
     redirect '/', :flash => {:success => "#{@message}"}
   else
